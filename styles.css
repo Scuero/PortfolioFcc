@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+body{
+    margin:0;
+    padding:0;
+    font-size: 1.2rem;
+    background-image: linear-gradient( 300deg,rgba(43, 88, 118, 0.5),  rgba(78, 67, 118, 0.6) ) , url(https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80), url(noise.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.asd::before{
+    width: 100vw;
+    height: 100vh;
+    background: url(noise.gif);
+    opacity: 0.04;
+    position: fixed;
+    z-index: -1;
+    content: "";
+}
+
+#navbar{
+    display:flex;
+    justify-content: flex-end;
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    box-shadow: 1px 2px rgb(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+
+
+@media (max-width: 500px){
+    #navbar{
+        position: static;
+    }
+}
+
+#navbar ul{
+    display:flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-family: 'Syne Mono', monospace;
+}
+
+#navbar ul li{
+    padding:1rem;
+    margin-right: 1rem;
+    position: relative;
+}
+
+#navbar ul li a::before{
+    content: "";
+    height:3px;
+    width: 0%;
+    background-color:rgb(243, 102, 102);
+    position: absolute;
+    bottom: 0%;
+    transition: 0.5s ease-out;
+    text-align: center;
+}
+
+#navbar ul li a{
+    text-decoration: none;
+    color: white;
+    font-size:1.3rem;
+    position: relative;
+    transition: 0.5s ease-out;
+}
+
+#navbar ul li a:hover{
+    color: rgb(240, 155, 155);
+}
+
+#navbar ul li a:hover::before{
+    width: 100%;
+    color: rgb(240, 155, 155);
+}
+
+#welcome-section{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+
+#welcome-section h1{
+    font-family: 'Righteous', cursive;
+    font-size: 5rem;
+    color: white;
+}
+
+.glitch{
+    position: relative;
+    z-index: -2;
+}
+
+.glitch:before, .glitch:after{
+    right: 0;
+    top: 0;
+    left: 0;
+    content: "RODRIGO VARGAS";
+    position: absolute;
+}
+
+.glitch:before{
+    left: -1rem;
+    text-shadow: 5px 0 #11dfff;
+    animation: efectoGlitch 2s infinite linear alternate-reverse;
+}
+
+.glitch:after{
+    left: 0.9rem;
+    text-shadow: 5px 0 #ff62f7;
+    animation: efectoGlitch 3s infinite linear alternate-reverse;
+}
+
+@keyframes efectoGlitch {
+    0% {
+        clip: rect(99px,9999px,45px,0)
+    }
+    5% {
+        clip: rect(20px,9999px,50px,0)
+    }
+    10% {
+        clip: rect(60px,9999px,20px,0)
+    }
+    15% {
+        clip: rect(70px,9999px,80,0)
+    }
+    20% {
+        clip: rect(50px,9999px,54,0)
+    }
+    25% {
+        clip: rect(45px,9999px,42,0)
+    }
+    30% {
+        clip: rect(35px,9999px,29,0)
+    }
+    35% {
+        clip: rect(30px,9999px,72,0)
+    }
+    40% {
+        clip: rect(80px,9999px,84,0)
+    }
+    45% {
+        clip: rect(85px,9999px,25,0)
+    }
+    50% {
+        clip: rect(90px,9999px,52,0)
+    }
+    55% {
+        clip: rect(55px,9999px,45px,0)
+    }
+    60% {
+        clip: rect(35px,9999px,50px,0)
+    }
+    65% {
+        clip: rect(60px,9999px,20px,0)
+    }
+    70% {
+        clip: rect(80px,9999px,80px,0)
+    }
+    75% {
+        clip: rect(50px,9999px,54px,0)
+    }
+    80% {
+        clip: rect(45px,9999px,22px,0)
+    }
+    85% {
+        clip: rect(25px,9999px,9px,0)
+    }
+    90% {
+        clip: rect(10px,9999px,72px,0)
+    }
+    95% {
+        clip: rect(80px,9999px,84px,0)
+    }
+    100% {
+        clip: rect(95px,9999px,25px,0)
+    }
+}
+
+#welcome-section p{
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    width: 50%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 3rem;
+    color: white;
+    animation: tipeo 2.2s steps(25) 1s 1 normal both, parpadeoCursor 500ms steps(40) infinite normal;
+}
+
+@keyframes tipeo{
+    from{
+        width:0;
+    }
+    to{
+        width:8em;
+    }
+}
+
+@keyframes parpadeoCursor{
+    from{
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to{
+        border-right-color: transparent;
+    }
+}
+
+
+#projects{
+    padding:2rem;
+}
+
+.grilla-de-proyectos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2rem;
+    text-align: center;
+}
+
+.grilla-de-proyectos a{
+    text-decoration: none;
+    color: rgb(211, 204, 204);
+    
+}
+
+.project-tile{
+    box-shadow: 1rem 1rem 2rem rgb(46, 45, 45);
+}
+
+.portada-proyecto{
+    width: 100%;
+    display:block;
+}
+
+#contacto{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding:2rem;
+}
+
+.contacto h3{
+
+}
+
+.links-de-contactos{
+}
+
+#profile-link{
+    
+}
